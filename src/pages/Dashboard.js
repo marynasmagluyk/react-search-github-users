@@ -7,6 +7,7 @@ const Dashboard = () => {
     return (
         <main>
             <Info />
+            <User />
         </main>
     );
 };
