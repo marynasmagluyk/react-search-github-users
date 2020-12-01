@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import mockUser from './mockData.js/mockUser';
 import mockRepos from './mockData.js/mockRepos';
 import mockFollowers from './mockData.js/mockFollowers';
-import axios from 'axios';
+//import axios from 'axios';
 
 const rootUrl = 'https://api.github.com';
 
@@ -15,11 +15,13 @@ const GithubProvider = ({children}) => {
     const [gitRepos, setGitRepos] = useState(mockRepos);
 
     return (
-        <GithubContext.Provider>{{
-            gitHubUser,
-            gitRepos,
-            gitFollowers,
-        }}</GithubContext.Provider>
+        <GithubContext.Provider value={
+            {
+                gitHubUser,
+                gitRepos,
+                gitFollowers,
+            }
+        }>{children}</GithubContext.Provider>
     )
 };
 

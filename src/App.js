@@ -10,12 +10,12 @@ function App() {
                        exact={true}>
                     <Dashboard></Dashboard>
                 </Route>
-                <Route path='/login'>
-                    <Login></Login>
-                </Route>
-                <Route path='*'>
-                    <Error></Error>
-                </Route>
+                {/*<Route path='/login'>*/}
+                    {/*<Login></Login>*/}
+                {/*</Route>*/}
+                {/*<Route path='*'>*/}
+                    {/*<Error></Error>*/}
+                {/*</Route>*/}
             </Switch>
         </Router>
     );
