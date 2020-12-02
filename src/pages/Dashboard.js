@@ -8,6 +8,7 @@ const Dashboard = () => {
         <main>
             <Info />
             <User />
+            <Repos/>
         </main>
     );
 };
