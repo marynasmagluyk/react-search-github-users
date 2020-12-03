@@ -1,28 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GithubContext } from '../context/context';
-import { Pie, Column, Bar, Doughnut } from './Charts';
-const Repos = () => {
-    const {repos} = React.useContext(GithubContext);
+import {GithubContext} from '../context/context';
+import {Pie, Column, Bar, Doughnut} from './Charts';
 
-    const ChartData = [
-        {
-            label: 'css',
-            value:'150'
-        },
-        {
-            label: 'css',
-            value:'150'
-        },
-        {
-            label: 'css',
-            value:'150'
+const Repos = () => {
+    const {gitRepos} = React.useContext(GithubContext);
+
+    let languages = gitRepos.reduce((total, item) => {
+        const {language} = item;
+
+        if (!language) return total;
+
+        if (!total[language]) {
+            total[language] = {label: language, value: 1};
+        } else {
+            total[language] = {
+                ...total[language],
+                value: total[language].value + 1
+            };
         }
-    ];
-    return(
+
+        return total;
+    }, {});
+    languages = Object.values(languages).sort((a, b) => {
+        return b.value - a.value;
+    }).slice(0, 5);
+
+    return (
         <section className='section'>
             <Wrapper className='section-center'>
-                <Pie data={ChartData}></Pie>
+                <Pie data={languages}/>
             </Wrapper>
 
         </section>
