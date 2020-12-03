@@ -13,3 +13,24 @@ import Chart from 'fusioncharts/fusioncharts.charts';
 
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Chart);
+
+const Column = ({ data }) => {
+    const chartConfigs = {
+        type: "pie2d", // The chart type
+        width: "100%", // Width of the chart
+        height: "350", // Height of the chart
+        dataFormat: "json", // Data type
+        dataSource: {
+            // Chart Configuration
+            chart: {
+                caption: 'Languages',
+                theme: 'fusion',
+            },
+            // Chart Data
+            data,
+        },
+    };
+
+    return <ReactFC {...chartConfigs} />;
+};
+export default Column;
