@@ -30,8 +30,9 @@ const Repos = () => {
         <section className='section'>
             <Wrapper className='section-center'>
                 <Pie data={languages}/>
+                <div></div>
+                <Doughnut data={languages}/>
             </Wrapper>
-
         </section>
     )
 }

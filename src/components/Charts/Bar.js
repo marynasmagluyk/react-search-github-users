@@ -17,14 +17,14 @@ ReactFC.fcRoot(FusionCharts, Chart);
 
 const Bar = ({ data }) => {
     const chartConfigs = {
-        type: "pie2d", // The chart type
+        type: "", // The chart type
         width: "100%", // Width of the chart
         height: "350", // Height of the chart
         dataFormat: "json", // Data type
         dataSource: {
             // Chart Configuration
             chart: {
-                caption: 'Languages',
+                caption: '',
                 theme: 'fusion',
             },
             // Chart Data
