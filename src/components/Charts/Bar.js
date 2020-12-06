@@ -17,15 +17,18 @@ ReactFC.fcRoot(FusionCharts, Chart);
 
 const Bar = ({ data }) => {
     const chartConfigs = {
-        type: "", // The chart type
+        type: "bar3d", // The chart type
         width: "100%", // Width of the chart
-        height: "350", // Height of the chart
+        height: "400", // Height of the chart
         dataFormat: "json", // Data type
         dataSource: {
             // Chart Configuration
             chart: {
-                caption: '',
-                theme: 'fusion',
+                caption: 'Most Forked',
+                yAxisName: 'Forks',
+                xAxisName: 'Repos',
+                yAxisNameFontSize: '16px',
+                xAxisNameFontSize: '16px',
             },
             // Chart Data
             data,

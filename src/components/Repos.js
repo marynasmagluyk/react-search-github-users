@@ -40,8 +40,9 @@ const Repos = () => {
         <section className='section'>
             <Wrapper className='section-center'>
                 <Pie data={mostUsed}/>
-                <div></div>
+                <Column data={mostUsed}/>
                 <Doughnut data={mostStarred}/>
+                <Bar data={mostUsed} />
             </Wrapper>
         </section>
     )
