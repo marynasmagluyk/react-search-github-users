@@ -36,13 +36,28 @@ const Repos = () => {
         }
     }).slice(0,5);
 
+    let {stars, forks} = gitRepos.reduce((total, item) => {
+
+        const {stargazers_count, name, forks} = item;
+
+        total.stars[stargazers_count] = {label: name, value: stargazers_count};
+        total.forks[forks] = {label: name, value: forks};
+
+        return total;
+
+    }, { stars: {}, forks: {},});
+
+    stars = Object.values(stars).slice(-5).reverse();
+
+    forks = Object.values(forks).slice(-5).reverse();
+
     return (
         <section className='section'>
             <Wrapper className='section-center'>
                 <Pie data={mostUsed}/>
-                <Column data={mostStarred}/>
+                <Column data={stars}/>
                 <Doughnut data={mostStarred}/>
-                <Bar data={mostUsed} />
+                <Bar data={forks} />
             </Wrapper>
         </section>
     )
