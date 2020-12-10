@@ -6,16 +6,16 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route path='/'
+                <PrivateRoute path='/'
                        exact={true}>
-                    <Dashboard></Dashboard>
+                    <Dashboard/>
+                </PrivateRoute>
+                <Route path='/login'>
+                    <Login/>
                 </Route>
-                {/*<Route path='/login'>*/}
-                    {/*<Login></Login>*/}
-                {/*</Route>*/}
-                {/*<Route path='*'>*/}
-                    {/*<Error></Error>*/}
-                {/*</Route>*/}
+                <Route path='*'>
+                    <Error/>
+                </Route>
             </Switch>
         </Router>
     );
